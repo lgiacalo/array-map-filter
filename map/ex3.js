@@ -62,8 +62,19 @@ Expected OUTPUT for this sample:
  */
 
 function getMoviesFreshness(movies) {
+  return movies.map(obj => {
+    if (obj.rating > 75) obj.label = "certified fresh";
+    else if (obj.rating >= 60) obj.label = "fresh";
+    else obj.label = "rotten";
+    return obj
+  })
 }
 
+
+// * If `rating` is STRICTLY below 60, the value to assign to `label` is "rotten".
+// * If `rating` is between 60 and 75 (included), the value to assign to `label` is "fresh".
+// * If `rating` STRICTLY above 75, the value to assign to `label` is "certified fresh".
+// * You might need a refresher on how to manipulate object literals:
 
 
 // DON'T TOUCH THIS!

@@ -27,6 +27,7 @@ Expected OUTPUT for this sample array:
 */
 
 function getStringsLength(strings) {
+  return strings.map(s => `${s} contains ${s.length} characters`)
 }
 
 // If you need, you can always visualize the result with a console.log.
